@@ -5,6 +5,16 @@ body {
   background: rgb(197, 188, 188);
 }
 
+.button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  min-width: 40%;
+  height: 100%;
+  flex: 1;
+  background: transparent;
+}
+
 header {
   width: 100%;
   padding: 15px 0;
