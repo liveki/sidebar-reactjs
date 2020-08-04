@@ -1,26 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import { useSpring, animated } from 'react-spring';
 
-function App() {
+import { IoIosMenu } from 'react-icons/io';
+
+import './styles.css';
+import SideBar from './components/SideBar';
+
+const App: React.FC = () => {
+  const [hidden, setHidden] = useState(true);
+
+  const propsStyle = useSpring({
+    transform: hidden ? 'rotate(0deg)' : 'rotate(90deg)',
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <>
+      <header>
+        <animated.button onClick={() => setHidden(!hidden)} style={propsStyle}>
+          <IoIosMenu size={30} />
+        </animated.button>
+        SideBar
       </header>
-    </div>
+
+      <SideBar hidden={hidden} />
+    </>
   );
-}
+};
 
 export default App;

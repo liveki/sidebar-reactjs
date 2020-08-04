@@ -1,0 +1,36 @@
+.sidebar {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+menu {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  margin: 0;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 0;
+  height: 90vh;
+
+  box-shadow: 3px 0 50px black;
+}
+
+menu a {
+  text-decoration: none;
+  color: #000;
+  font-size: 20px;
+  margin: 0 auto;
+  text-align: center;
+  width: 90%;
+}
+
+menu a {
+  border-bottom: 1px solid rgb(0, 0, 0, 0.2);
+}
+
+menu a + a {
+  margin-top: 10px;
+}
